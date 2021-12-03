@@ -23,6 +23,17 @@ test('it returns 2 when 1,2,1 are given', () => {
     expect(sonarSweep(input)).toBe(1);
 });
 
+test('it returns 2 when 1,2,3,1,2,3 are given', () => {
+    const input = `1
+2
+3
+1
+2
+3`;
+
+    expect(sonarSweep(input)).toBe(4);
+});
+
 test('it returns the correct value for the final value', () => {
     let input = "";
     try {
@@ -31,5 +42,5 @@ test('it returns the correct value for the final value', () => {
         throw err;
     }
 
-    expect(sonarSweep(input)).toBe(12);
+    expect(sonarSweep(input)).toBe(1162);
 });
