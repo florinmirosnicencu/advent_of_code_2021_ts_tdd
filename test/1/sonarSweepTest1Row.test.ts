@@ -1,4 +1,4 @@
-import {sonarSweep} from '../../src/1/index';
+import {sonarSweep} from '../../src/1/sonarSweep1Row';
 
 const fs = require('fs');
 test('it returns 1 when 1,2 are given', () => {
