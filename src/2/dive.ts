@@ -10,6 +10,7 @@ enum Commands {
 }
 
 export function dive(input: string): Position {
+    let aim = 0;
     let position = {
         horizontal: 0,
         depth: 0
@@ -23,17 +24,23 @@ export function dive(input: string): Position {
         switch (command) {
             case Commands.Forward: {
                 position.horizontal += units;
-                break;
-            }
-            case Commands.Down: {
-                position.depth += units;
-                break;
-            }
-            case Commands.Up: {
-                position.depth -= units;
+
+                if (aim != 0) {
+                    position.depth += units * aim;
+                }
+
                 if (position.depth < 0) {
                     position.depth = 0;
                 }
+
+                break;
+            }
+            case Commands.Down: {
+                aim += units;
+                break;
+            }
+            case Commands.Up: {
+                aim -= units;
                 break;
             }
 
