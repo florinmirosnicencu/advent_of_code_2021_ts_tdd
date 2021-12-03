@@ -16,7 +16,6 @@ export function dive(input: string): Position {
     }
 
     const list = input.split('\n');
-    console.log(input);
     list.map((row) => {
         let command = row.split(' ')[0];
         let units = parseInt(row.split(' ')[1]);

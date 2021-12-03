@@ -10,7 +10,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --collectCoverage"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -22,6 +23,7 @@
     "typescript": "^4.5.2"
   },
   "jest": {
-    "testMatch": [ "**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).ts" ]
+    "testMatch": [ "**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).ts" ],
+    "coverageReporters": ["text-summary"]
   }
 }
