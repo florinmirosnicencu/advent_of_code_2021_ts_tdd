@@ -19,7 +19,6 @@ test('it returns 1 when 1,2,3,3,2,1 are given', () => {
     expect(sonarSweep3Rows(input)).toBe(1);
 });
 
-
 test('it returns the correct value for the final value', () => {
     let input = "";
 
