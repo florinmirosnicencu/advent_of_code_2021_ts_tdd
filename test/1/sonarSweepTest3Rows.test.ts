@@ -29,5 +29,5 @@ test('it returns the correct value for the final value', () => {
         throw err;
     }
 
-    expect(sonarSweep3Rows(input)).toBe(1162);
+    expect(sonarSweep3Rows(input)).toBe(1190);
 });
