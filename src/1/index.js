@@ -2,11 +2,26 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sonarSweep = void 0;
 function sonarSweep(input) {
-    const sweeps = input.split('\n');
-    let largerMeasurementsMax = 0;
-    sweeps.reduce((previousValue, currentValue) => {
-        largerMeasurementsMax++;
+    let maxStreak = 0;
+    let prevValue;
+    let streak = 0;
+    let sweeps = input.split('\n').map(num => parseInt(num, 10));
+    sweeps.forEach((val) => {
+        if (prevValue == undefined) {
+            prevValue = val;
+            return;
+        }
+        if (val <= prevValue) {
+            streak = 0;
+            prevValue = val;
+            return;
+        }
+        streak++;
+        if (streak > maxStreak) {
+            maxStreak = streak;
+        }
+        prevValue = val;
     });
-    return largerMeasurementsMax;
+    return maxStreak;
 }
 exports.sonarSweep = sonarSweep;
