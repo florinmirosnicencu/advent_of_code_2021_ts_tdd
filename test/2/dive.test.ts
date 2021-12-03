@@ -1,5 +1,5 @@
 import {dive} from "../../src/2/dive";
-import fs from "fs";
+import * as fs from 'fs';
 
 test('it returns hor 0 and depth 0 for empty input', () => {
     const input = ``;
