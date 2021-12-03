@@ -1,0 +1,24 @@
+{
+  "name": "advent_of_code_2021_ts_tdd",
+  "version": "1.0.0",
+  "description": "Just wanna write some tests",
+  "main": "index.js",
+  "repository": "https://github.com/florinmirosnicencu/advent_of_code_2021_ts_tdd.git",
+  "author": "Florin Mirosnicencu <florinmirosnicencu@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "babel-jest": "^27.0.5",
+    "jest": "27.0.3",
+    "@types/jest": "27.0.3",
+    "typescript": "^4.5.2"
+  }
+}
