@@ -29,3 +29,27 @@ test('for 11 00 it returns o2 "11" and co2 "00"', () => {
         co2: "00"
     })
 });
+
+test('for 11 00 11 it returns o2 "11" and co2 "00"', () => {
+    const input = `11
+00`;
+
+    expect(binaryDiagnosticLifeSupport(input)).toStrictEqual({
+        o2: "11",
+        co2: "00"
+    })
+});
+
+test('sample output', () => {
+    let input = "";
+    try {
+        input = fs.readFileSync(process.cwd() + '/test/3/sampleInput.txt', 'utf8');
+    } catch (err) {
+        throw err;
+    }
+
+    expect(binaryDiagnosticLifeSupport(input)).toStrictEqual({
+        o2: "10111",
+        co2: "01010"
+    })
+});
