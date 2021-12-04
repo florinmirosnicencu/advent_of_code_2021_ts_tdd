@@ -12,20 +12,12 @@ function calculateO2(digitPosition: number, maxDigitCount: number, digitAppearan
         digitAppearances = [];
         filteredRows.map((row, index) => {
             const digitArray = row.split("");
-
             const digit = parseInt(digitArray[digitPosition]);
-            if (isNaN(digit)) {
-                return;
-            }
 
             digitAppearances = countDigit(digitAppearances, digit, digitPosition);
         });
 
         digitAppearances.map((value) => {
-            if (value["1"] == undefined && value["0"] == undefined) {
-                return;
-            }
-
             if (value["1"] >= value["0"]) {
                 binaryString += "1";
                 return;
@@ -56,20 +48,12 @@ function calculateCo2(digitPosition: number, maxDigitCount: number, digitAppeara
         digitAppearances = [];
         filteredRows.map((row, index) => {
             const digitArray = row.split("");
-
             const digit = parseInt(digitArray[digitPosition]);
-            if (isNaN(digit)) {
-                return;
-            }
 
             digitAppearances = countDigit(digitAppearances, digit, digitPosition);
         });
 
         digitAppearances.map((value) => {
-            if (value["1"] == undefined && value["0"] == undefined) {
-                return;
-            }
-
             if (value["0"] <= value["1"]) {
                 binaryString += "0";
                 return;
