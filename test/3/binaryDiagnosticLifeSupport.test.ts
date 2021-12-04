@@ -30,13 +30,16 @@ test('for 11 00 it returns o2 "11" and co2 "00"', () => {
     })
 });
 
-test('for 11 00 11 it returns o2 "11" and co2 "00"', () => {
-    const input = `11
-00`;
+test('for 10 01 11 01 10 it returns o2 "10" and co2 "01"', () => {
+    const input = `10
+01
+11
+01
+10`;
 
     expect(binaryDiagnosticLifeSupport(input)).toStrictEqual({
-        o2: "11",
-        co2: "00"
+        o2: "10",
+        co2: "01"
     })
 });
 
