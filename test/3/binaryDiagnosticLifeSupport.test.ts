@@ -39,7 +39,7 @@ test('for 10 01 11 01 10 it returns o2 "10" and co2 "01"', () => {
 
     expect(binaryDiagnosticLifeSupport(input)).toStrictEqual({
         o2: "10",
-        co2: "01"
+        co2: "00"
     })
 });
 
@@ -55,4 +55,20 @@ test('sample output', () => {
         o2: "10111",
         co2: "01010"
     })
+});
+
+test('puzzle input', () => {
+    let input = "";
+    try {
+        input = fs.readFileSync(process.cwd() + '/test/3/testInput.txt', 'utf8');
+    } catch (err) {
+        throw err;
+    }
+    let result = binaryDiagnosticLifeSupport(input)
+
+    expect(result).toStrictEqual({
+        o2: "100101011101",
+        co2: "001010100001"
+    });
+    console.log(parseInt(result.o2, 2) * parseInt(result.co2, 2));
 });

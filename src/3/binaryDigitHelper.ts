@@ -13,6 +13,7 @@ export function countDigit(digitAppearances: BinaryValueCounter[], digit: number
             0: +(digit === 0),
             1: +(digit === 1),
         }
+        return digitAppearances;
     }
 
     // @ts-ignore

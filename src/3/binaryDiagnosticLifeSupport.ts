@@ -39,6 +39,10 @@ function calculateO2(digitPosition: number, maxDigitCount: number, digitAppearan
             return element[digitPosition] === mostCommonValueForCurrentPosition;
         })
 
+        if (filteredRows.length === 1) {
+            return filteredRows[0];
+        }
+
         digitPosition++;
     }
 
@@ -75,10 +79,14 @@ function calculateCo2(digitPosition: number, maxDigitCount: number, digitAppeara
             return;
         })
 
-        const mostCommonValueForCurrentPosition = digitAppearances[digitPosition][1] <= digitAppearances[digitPosition][0] ? "0" : "1";
+        const mostCommonValueForCurrentPosition = digitAppearances[digitPosition][0] <= digitAppearances[digitPosition][1] ? "0" : "1";
         filteredRows = filteredRows.filter(element => {
             return element[digitPosition] === mostCommonValueForCurrentPosition;
         })
+
+        if (filteredRows.length === 1) {
+            return filteredRows[0];
+        }
 
         digitPosition++;
     }
