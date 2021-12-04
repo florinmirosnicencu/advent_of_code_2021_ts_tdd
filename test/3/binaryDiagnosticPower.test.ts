@@ -1,10 +1,10 @@
-import {binaryDiagnostic} from '../../src/3/binaryDiagnostic';
+import {binaryDiagnosticPower} from '../../src/3/binaryDiagnosticPower';
 import * as fs from "fs";
 
 test('for no input it returns gamma 0 and epsilon 0', () => {
     const input = ``;
 
-    expect(binaryDiagnostic(input)).toStrictEqual({
+    expect(binaryDiagnosticPower(input)).toStrictEqual({
         gamma: "",
         epsilon: ""
     })
@@ -13,7 +13,7 @@ test('for no input it returns gamma 0 and epsilon 0', () => {
 test('for input 1 it returns gamma 1 and epsilon 0', () => {
     const input = `1`;
 
-    expect(binaryDiagnostic(input)).toStrictEqual({
+    expect(binaryDiagnosticPower(input)).toStrictEqual({
         gamma: "1",
         epsilon: "0"
     })
@@ -23,7 +23,7 @@ test('for input 11 00 it returns gamma 11 and epsilon 00', () => {
     const input = `11
 00`;
 
-    expect(binaryDiagnostic(input)).toStrictEqual({
+    expect(binaryDiagnosticPower(input)).toStrictEqual({
         gamma: "11",
         epsilon: "00"
     })
@@ -37,7 +37,7 @@ test('simplified sample input', () => {
     } catch (err) {
         throw err;
     }
-    let expected = binaryDiagnostic(input);
+    let expected = binaryDiagnosticPower(input);
     expect(expected).toStrictEqual({
         gamma: "10",
         epsilon: "01"
@@ -55,7 +55,7 @@ test('sample input', () => {
     } catch (err) {
         throw err;
     }
-    let expected = binaryDiagnostic(input);
+    let expected = binaryDiagnosticPower(input);
     expect(expected).toStrictEqual({
         gamma: "10110",
         epsilon: "01001"
@@ -73,7 +73,7 @@ test('puzzle input', () => {
     } catch (err) {
         throw err;
     }
-    let expected = binaryDiagnostic(input);
+    let expected = binaryDiagnosticPower(input);
     expect(expected).toStrictEqual({
         gamma: "100111100011",
         epsilon: "011000011100"
