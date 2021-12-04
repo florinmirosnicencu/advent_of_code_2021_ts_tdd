@@ -5,7 +5,7 @@
     "target": "ES2018",
     "strict": true,
     "noUnusedLocals": false,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "noImplicitReturns": true,
     "declaration": true
   },
