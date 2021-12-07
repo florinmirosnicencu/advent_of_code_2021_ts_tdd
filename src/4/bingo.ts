@@ -50,6 +50,14 @@ export function parseInput(input: string): {
     let boards = prepareBoards(data.filter((val, index) => {
         return index > 1;
     }));
+    return {
+        drawNumbers: drawNumbers,
+        boards: boards
+    };
+}
+
+export function bingo(input: string): number {
+    let {drawNumbers, boards} = parseInput(input);
 
     drawNumbers.forEach((currentNumber) => {
         boards.forEach((board, boardIndex) => {
@@ -60,14 +68,5 @@ export function parseInput(input: string): {
             };
         });
     };
-
-    return {
-        drawNumbers: drawNumbers,
-        boards: []
-    };
-}
-
-export function bingo(input: string): number {
-    let {drawNumbers, boards} = parseInput(input);
     return 0;
 }
