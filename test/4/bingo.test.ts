@@ -25,3 +25,17 @@ test("For a board that has 12345 on a row and input of 12345 it returns 1550", (
     const result = bingo(input);
     expect(result).toStrictEqual(1550);
 })
+
+test("For a board that has 12345 on a column and input of 12345 it returns 1550", () => {
+    const input = `1,2,3,4,5
+
+1 6 11 16 21
+2 7 8 9 10
+3 12 13 14 15
+4 17 18 19 20
+5 22 23 24 25`
+    //the sum of all unselected numbers on the board is 310 and the winning number is 5
+    //so returned score should be 310 * 5
+    const result = bingo(input);
+    expect(result).toStrictEqual(1550);
+})
