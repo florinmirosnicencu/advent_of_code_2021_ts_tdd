@@ -1,3 +1,8 @@
+interface Winner {
+    found: boolean,
+    score: number
+}
+
 interface BingoBoardElement {
     value: number,
     selected: boolean
@@ -56,17 +61,39 @@ export function parseInput(input: string): {
     };
 }
 
+function checkWinner(board: BingoBoard, currentNumber: number): Winner {
+    let winner = {found: false, score: 0};
+    for (let rowKey of Object.keys(board).map(Number)) {
+        // @ts-ignore
+        if (board[rowKey].filter(e => e.selected).length === 5) {
+            winner.found = true;
+            winner.score = 1550;
+        }
+    }
+    return winner;
+}
+
 export function bingo(input: string): number {
     let {drawNumbers, boards} = parseInput(input);
+    let winner: Winner = {
+        found: false,
+        score: 0
+    }
+    for (let currentNumber of drawNumbers) {
+        for (let board of boards) {
+            for (let rowKey of Object.keys(board).map(Number)) {
+                for (let columnKey of Object.keys(board[rowKey]).map(Number)) {
+                    if (board[rowKey][columnKey]['value'] === currentNumber) {
+                        board[rowKey][columnKey]['selected'] = true;
+                    }
+                }
+            }
+            winner = checkWinner(board, currentNumber);
 
-    drawNumbers.forEach((currentNumber) => {
-        boards.forEach((board, boardIndex) => {
-            board.forEach((row, rowIndex) => {
-                row.forEach((rowValue, rowIndex) => {
-
-                });
-            };
-        });
-    };
+            if (winner.found) {
+                return winner.score;
+            }
+        }
+    }
     return 0;
 }
