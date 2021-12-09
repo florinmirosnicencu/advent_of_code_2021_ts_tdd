@@ -8,12 +8,8 @@ interface BingoBoardElement {
     selected: boolean
 }
 
-interface BingoBoardRow {
-    [index: number]: BingoBoardElement;
-}
-
-interface BingoBoard {
-    [index: number]: BingoBoardRow;
+interface BingoBoard extends Iterable<any>{
+    [index: number]: BingoBoardElement[];
 }
 
 function prepareDrawNumbers(numbers: string): number[] {
